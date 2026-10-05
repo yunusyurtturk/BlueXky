@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+  html, body { margin: 0; width: 1280px; height: 800px; overflow: hidden; background: #000; color: #e7e9ea; font-family: "Segoe UI", system-ui, sans-serif; }
+  body { display: flex; }
+  .text { flex: 1; padding: 0 56px; display: flex; flex-direction: column; justify-content: center; }
+  .text img { width: 96px; height: 96px; margin-bottom: 28px; }
+  h1 { margin: 0 0 16px; font-size: 44px; line-height: 1.15; }
+  p { margin: 0 0 28px; font-size: 22px; line-height: 1.4; color: #8b98a5; }
+  .key { display: flex; align-items: center; gap: 14px; margin-top: 12px; font-size: 20px; }
+  .bar { width: 5px; height: 30px; background: #3b9eff; }
+  .bar.x { background: #2f3336; }
+  .shot { height: 800px; width: 782px; flex: none; border-left: 1px solid #2f3336; }
+</style>
+</head>
+<body>
+  <div class="text">
+    <img src="../icon.svg" alt="">
+    <h1>Bluesky posts in your X timeline</h1>
+    <p>Read both in one place, in time order.</p>
+    <div class="key"><span class="bar x"></span>X post</div>
+    <div class="key"><span class="bar"></span>Bluesky post (blue line and badge)</div>
+  </div>
+  <img class="shot" src="../../docs/screenshot.png" alt="">
+</body>
+</html>

@@ -4,6 +4,10 @@ A Chrome extension that shows your Bluesky home timeline inside the X (Twitter) 
 
 **Unofficial.** BlueXky is not affiliated with, endorsed by, or connected to X Corp. or Bluesky Social PBC.
 
+![An X post followed by two Bluesky posts in the X timeline](docs/screenshot.png)
+
+*The top post is from X. The two posts below it, with the blue line on the left and the "Bluesky" badge, are from Bluesky.*
+
 ## What it does
 
 - Works only on `x.com`, on the home timeline. It does nothing on other sites.
@@ -50,6 +54,8 @@ BlueXky refuses anything that is not in App Password format, so your main passwo
 - The X page cannot read your password or session tokens. They are handled by the extension's background script.
 - Bluesky posts are displayed inside the X page, so scripts on x.com can technically read the Bluesky content that is shown. They cannot get your credentials.
 - BlueXky has no server and collects nothing. It talks only to `bsky.social` and Bluesky's image servers.
+
+The full policy is in [PRIVACY.md](PRIVACY.md).
 
 ## Limitations
 
