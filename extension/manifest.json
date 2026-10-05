@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "BlueXky",
+  "version": "0.1.0",
+  "description": "Shows your Bluesky home timeline inline in the X home timeline, merged chronologically.",
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://bsky.social/*",
+    "https://cdn.bsky.app/*",
+    "https://video.bsky.app/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*"],
+      "js": ["merge.js", "content.js"],
+      "css": ["content.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_title": "BlueXky",
+    "default_popup": "popup.html"
+  }
+}

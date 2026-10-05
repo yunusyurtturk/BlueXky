@@ -1,0 +1,372 @@
+.bskyx-group {
+  --bskyx-text: #0f1419;
+  --bskyx-muted: #536471;
+  --bskyx-border: #eff3f4;
+  --bskyx-hover: rgba(0, 0, 0, 0.03);
+  --bskyx-accent: #0a7aff;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--bskyx-text);
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.bskyx-group.bskyx-dark {
+  --bskyx-text: #e7e9ea;
+  --bskyx-muted: #71767b;
+  --bskyx-border: #2f3336;
+  --bskyx-hover: rgba(255, 255, 255, 0.03);
+  --bskyx-accent: #3b9eff;
+}
+
+.bskyx-group * {
+  box-sizing: border-box;
+}
+
+.bskyx-card {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--bskyx-border);
+  border-left: 3px solid var(--bskyx-accent);
+}
+
+.bskyx-card {
+  cursor: pointer;
+}
+
+.bskyx-deleted-note {
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.bskyx-card:hover {
+  background: var(--bskyx-hover);
+}
+
+.bskyx-group[data-pos="after"] > :first-child {
+  border-top: 1px solid var(--bskyx-border);
+}
+
+.bskyx-context {
+  margin: 0 0 4px 48px;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--bskyx-muted);
+}
+
+.bskyx-row {
+  display: flex;
+  gap: 8px;
+}
+
+.bskyx-avatar {
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--bskyx-border);
+  object-fit: cover;
+}
+
+.bskyx-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.bskyx-head {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  white-space: nowrap;
+}
+
+.bskyx-name {
+  font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bskyx-handle {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-width: 0;
+}
+
+.bskyx-muted {
+  color: var(--bskyx-muted);
+}
+
+.bskyx-group a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.bskyx-group a.bskyx-link {
+  color: var(--bskyx-accent);
+}
+
+.bskyx-group a.bskyx-link:hover,
+.bskyx-group a.bskyx-time:hover {
+  text-decoration: underline;
+}
+
+.bskyx-badge {
+  margin-left: auto;
+  flex: none;
+  padding: 0 8px;
+  border-radius: 9999px;
+  font-size: 12px;
+  font-weight: 700;
+  color: #fff;
+  background: var(--bskyx-accent);
+}
+
+.bskyx-reply {
+  font-size: 14px;
+}
+
+.bskyx-text {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.bskyx-images,
+.bskyx-video,
+.bskyx-external,
+.bskyx-quote {
+  display: block;
+  margin-top: 12px;
+  border: 1px solid var(--bskyx-border);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.bskyx-images {
+  display: grid;
+  gap: 2px;
+  grid-template-columns: 1fr 1fr;
+}
+
+.bskyx-images-1 {
+  grid-template-columns: 1fr;
+}
+
+.bskyx-images-3 > :first-child {
+  grid-row: span 2;
+}
+
+.bskyx-image {
+  display: block;
+  min-height: 0;
+}
+
+.bskyx-images img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 16 / 10;
+  max-height: 510px;
+  object-fit: cover;
+  background: var(--bskyx-border);
+}
+
+.bskyx-video {
+  position: relative;
+}
+
+.bskyx-video img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 510px;
+  object-fit: cover;
+  background: var(--bskyx-border);
+}
+
+.bskyx-play {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.bskyx-external img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1.91 / 1;
+  object-fit: cover;
+  background: var(--bskyx-border);
+}
+
+.bskyx-external-info {
+  padding: 8px 12px;
+}
+
+.bskyx-external-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bskyx-quote {
+  padding: 12px;
+}
+
+.bskyx-quote-head {
+  display: flex;
+  gap: 4px;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.bskyx-actions {
+  display: flex;
+  gap: 32px;
+  margin-top: 8px;
+}
+
+.bskyx-action {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 56px;
+  padding: 6px 8px;
+  margin-left: -8px;
+  border: 0;
+  border-radius: 9999px;
+  font: inherit;
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--bskyx-muted);
+  background: transparent;
+  cursor: pointer;
+  transition: color 0.15s, background-color 0.15s;
+}
+
+.bskyx-action svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.bskyx-reply-btn:hover {
+  color: #1d9bf0;
+  background: rgba(29, 155, 240, 0.1);
+}
+
+.bskyx-repost-btn:hover,
+.bskyx-repost-btn.bskyx-on {
+  color: #00ba7c;
+}
+
+.bskyx-repost-btn:hover {
+  background: rgba(0, 186, 124, 0.1);
+}
+
+.bskyx-like-btn:hover,
+.bskyx-like-btn.bskyx-on {
+  color: #f91880;
+}
+
+.bskyx-like-btn:hover {
+  background: rgba(249, 24, 128, 0.1);
+}
+
+.bskyx-like-btn.bskyx-on svg {
+  fill: currentColor;
+}
+
+.bskyx-repost-btn.bskyx-on svg {
+  stroke-width: 2.5;
+}
+
+.bskyx-action:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.bskyx-composer {
+  margin-top: 8px;
+}
+
+.bskyx-input {
+  display: block;
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid var(--bskyx-border);
+  border-radius: 12px;
+  font: inherit;
+  color: var(--bskyx-text);
+  background: transparent;
+  resize: vertical;
+}
+
+.bskyx-input:focus {
+  outline: none;
+  border-color: var(--bskyx-accent);
+}
+
+.bskyx-composer-foot {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.bskyx-note {
+  margin-right: auto;
+  font-size: 13px;
+}
+
+.bskyx-error {
+  color: #f4212e;
+}
+
+.bskyx-btn {
+  padding: 6px 16px;
+  border: 0;
+  border-radius: 9999px;
+  font: inherit;
+  font-weight: 700;
+  color: #fff;
+  background: var(--bskyx-accent);
+  cursor: pointer;
+}
+
+.bskyx-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.bskyx-btn-plain {
+  color: var(--bskyx-text);
+  background: transparent;
+  border: 1px solid var(--bskyx-border);
+}
+
+.bskyx-more {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  border: 0;
+  border-bottom: 1px solid var(--bskyx-border);
+  border-left: 3px solid var(--bskyx-accent);
+  font: inherit;
+  text-align: center;
+  color: var(--bskyx-accent);
+  background: transparent;
+  cursor: pointer;
+}
+
+.bskyx-more:hover {
+  background: var(--bskyx-hover);
+}

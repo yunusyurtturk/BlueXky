@@ -1,0 +1,15 @@
+# Extension signing key and packed builds: never commit these
+*.pem
+*.crx
+*.zip
+
+# Local notes, secrets and tooling
+.env
+*.local
+notes/
+.claude/
+.vscode/
+
+# OS files
+Thumbs.db
+.DS_Store
