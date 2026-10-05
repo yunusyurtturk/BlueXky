@@ -10,6 +10,7 @@ A Chrome extension that shows your Bluesky home timeline inside the X (Twitter) 
 - Inserts posts from your Bluesky home timeline between X posts, by time. Bluesky posts have a blue left border and a "Bluesky" badge.
 - Like, repost and reply buttons on a Bluesky post act on **Bluesky only**. BlueXky never posts, likes or does anything else on X.
 - Clicking a Bluesky post opens it on bsky.app in a new tab.
+- It only adds to the page. X posts are not changed, hidden or reordered, and every inserted post is clearly marked as coming from Bluesky.
 
 It works best on the **Following** tab, which is chronological. The "For you" tab is not in time order, so placement there is approximate.
 
@@ -35,13 +36,15 @@ To update, download the new version, replace the folder, and click the reload bu
 
 BlueXky logs in with a Bluesky **App Password**. This is not your Bluesky password.
 
-1. In Bluesky, go to **Settings → Privacy and security → App passwords** and create one. It looks like `xxxx-xxxx-xxxx-xxxx`.
+1. Open [bsky.app/settings/app-passwords](https://bsky.app/settings/app-passwords) (or in Bluesky, go to **Settings → Privacy and security → App passwords**) and create one. It looks like `xxxx-xxxx-xxxx-xxxx`.
 2. In the BlueXky popup, enter your username (`.bsky.social` is added automatically if you leave it out) and the App Password.
 
 BlueXky refuses anything that is not in App Password format, so your main password cannot be entered by mistake. To disconnect, click **Log out** in the popup, or revoke the App Password in Bluesky.
 
 ## Privacy and security
 
+- BlueXky does not collect your X content. To know where a Bluesky post belongs, it looks at the time and ID of the X posts already loaded in your tab. That happens inside your browser; nothing from X is stored or sent anywhere, including to Bluesky.
+- It does not use your X account: it never calls X's API and never posts, likes, follows or sends anything on X.
 - Your App Password is sent only to `bsky.social`, over HTTPS, once, to create a session. It is not stored.
 - The Bluesky session tokens are stored in the browser's extension storage on your computer, unencrypted, like most extensions do. Anyone with access to your browser profile could copy them; revoking the App Password ends the session.
 - The X page cannot read your password or session tokens. They are handled by the extension's background script.

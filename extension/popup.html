@@ -12,7 +12,8 @@
     button:disabled { opacity: 0.6; cursor: default; }
     #status { margin: 10px 0 0; min-height: 18px; font-size: 13px; }
     #status.error { color: #d4183d; }
-    .warn { margin: -2px 0 10px; font-size: 12px; font-weight: 700; color: #b45309; }
+    .help { margin: -2px 0 12px; font-size: 12px; color: #536471; }
+    .help a { color: #0a7aff; }
     .hint { margin: 10px 0 0; font-size: 12px; color: #536471; }
     [hidden] { display: none; }
   </style>
@@ -27,9 +28,9 @@
     <label>App Password
       <input id="password" type="password" autocomplete="off" placeholder="xxxx-xxxx-xxxx-xxxx" required>
     </label>
-    <p class="warn">This is not your Bluesky password.</p>
+    <p class="help">An App Password is a separate password for apps like this one, not your Bluesky password. <a href="https://bsky.app/settings/app-passwords" target="_blank" rel="noopener">Create one on Bluesky</a>, or go to Settings → Privacy and security → App passwords.</p>
     <button type="submit">Log in</button>
-    <p class="hint">Create an App Password in Bluesky → Settings → Privacy and security → App passwords. It is used once to create a session and is not stored.</p>
+    <p class="hint">It is used once to log in and is not stored.</p>
   </form>
 
   <div id="account" hidden>
