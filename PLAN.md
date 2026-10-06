@@ -301,6 +301,8 @@ The next development steps are:
 
 ## Current project status
 
+Updated 6 October 2026. The extension is now called BlueXky and lives in `extension/`.
+
 Completed:
 
 ```text
@@ -312,14 +314,24 @@ Completed:
 ✓ Bluesky home timeline retrieval confirmed
 ✓ Timeline cursor/pagination confirmed
 ✓ PowerShell JSON inspection confirmed
+✓ Chrome Manifest V3 extension built
+✓ Runs only on x.com, and only acts on the home timeline
+✓ Detects X's main timeline and reads post timestamps
+✓ background.js owns the Bluesky session and API calls
+✓ Bluesky timeline merged chronologically into the X timeline
+✓ X infinite scroll and Bluesky cursor pagination handled
+✓ No Bluesky post inserted twice
+✓ Bluesky-side like, repost and reply from inside X
+✓ Login popup with App Password only (main password rejected)
+✓ Published on GitHub with README, privacy policy, icon and store images
 ```
 
-Next:
+Open:
 
 ```text
-→ Build the minimum Chrome extension
-→ Run it only on x.com
-→ Detect X's main timeline
-→ Connect the working Bluesky timeline API
-→ Merge both timelines chronologically
+→ "Post Bluesky post on X": deliberately not built as automation, since
+  scripting X's website is against X's automation rules. If added, it should
+  open X's own compose box pre-filled and let the user press Post.
+→ Chrome Web Store submission (developer account, listing, review)
+→ Optional: OAuth login instead of App Password
 ```
