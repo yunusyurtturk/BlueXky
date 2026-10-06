@@ -1,17 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
-  <!-- One glyph: the upper wings of a butterfly (Bluesky) over the lower legs of an X.
+  <!-- One glyph: the upper wings of a butterfly (Bluesky) over the lower half of an X.
        Drawn for BlueXky; not the official logos. -->
   <rect width="128" height="128" rx="28" fill="#0b0f14"/>
   <!-- lower half of an X -->
   <g stroke="#ffffff" stroke-width="13" stroke-linecap="round" fill="none">
-    <path d="M64 62 L31 114"/>
-    <path d="M64 62 L97 114"/>
+    <path d="M64 64 L31 116"/>
+    <path d="M64 64 L97 116"/>
   </g>
   <!-- upper wings -->
   <g fill="#1185fe">
-    <path d="M61 64 C54 44 38 24 20 16 C8 11 6 32 12 46 C20 62 42 70 61 64 Z"/>
-    <path d="M67 64 C74 44 90 24 108 16 C120 11 122 32 116 46 C108 62 86 70 67 64 Z"/>
+    <path d="M62 62 C54 42 38 22 20 14 C8 9 6 30 12 44 C20 60 42 68 62 62 Z"/>
+    <path d="M66 62 C74 42 90 22 108 14 C120 9 122 30 116 44 C108 60 86 68 66 62 Z"/>
   </g>
-  <!-- body -->
-  <rect x="59.5" y="38" width="9" height="30" rx="4.5" fill="#ffffff"/>
 </svg>
