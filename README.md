@@ -38,10 +38,19 @@ To update, download the new version, replace the folder, and click the reload bu
 
 ## Log in
 
-BlueXky logs in with a Bluesky **App Password**. This is not your Bluesky password.
+To connect BlueXky to your Bluesky account you need an **App Password**.
 
-1. Open [bsky.app/settings/app-passwords](https://bsky.app/settings/app-passwords) (or in Bluesky, go to **Settings → Privacy and security → App passwords**) and create one. It looks like `xxxx-xxxx-xxxx-xxxx`.
-2. In the BlueXky popup, enter your username (`.bsky.social` is added automatically if you leave it out) and the App Password.
+An App Password is a feature of Bluesky: a separate, limited password that you create for one app, so you never have to give that app your real password. It cannot change your account settings or delete your account, and you can revoke it at any time without affecting anything else. It looks like `xxxx-xxxx-xxxx-xxxx`.
+
+You get one from Bluesky itself:
+
+1. Open [bsky.app/settings/app-passwords](https://bsky.app/settings/app-passwords), or in the Bluesky app go to **Settings → Privacy and security → App passwords**.
+2. Click **Add App Password**, give it a name such as "BlueXky", and copy the password Bluesky shows you. It is shown only once.
+
+Then log in:
+
+3. Click the BlueXky icon in the toolbar.
+4. Enter your username (`.bsky.social` is added automatically if you leave it out) and paste the App Password.
 
 BlueXky refuses anything that is not in App Password format, so your main password cannot be entered by mistake. To disconnect, click **Log out** in the popup, or revoke the App Password in Bluesky.
 

@@ -329,9 +329,13 @@ Completed:
 Open:
 
 ```text
-→ "Post Bluesky post on X": deliberately not built as automation, since
-  scripting X's website is against X's automation rules. If added, it should
-  open X's own compose box pre-filled and let the user press Post.
 → Chrome Web Store submission (developer account, listing, review)
 → Optional: OAuth login instead of App Password
+```
+
+Dropped:
+
+```text
+✗ "Post Bluesky post on X" (step 13): skipped. Doing it by scripting X's
+  website would be against X's automation rules.
 ```
