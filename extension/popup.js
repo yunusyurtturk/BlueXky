@@ -9,7 +9,7 @@ function setStatus(text, isError = false) {
 }
 
 async function refresh() {
-  const res = await chrome.runtime.sendMessage({ type: 'bskyx:status' });
+  const res = (await chrome.runtime.sendMessage({ type: 'bskyx:status' })) || {};
   form.hidden = !!res.loggedIn;
   account.hidden = !res.loggedIn;
   document.getElementById('handle').textContent = res.handle ? `@${res.handle}` : '';
@@ -47,13 +47,13 @@ form.addEventListener('submit', async (e) => {
     password: document.getElementById('password').value,
   });
   button.disabled = false;
-  if (res.ok) {
+  if (res?.ok) {
     form.reset();
     chrome.storage.session.remove('loginDraft');
     setStatus('Logged in. Reload x.com to see Bluesky posts.');
     refresh();
   } else {
-    setStatus(res.message || res.error, true);
+    setStatus(res?.message || res?.error || 'Login failed. Try again.', true);
   }
 });
 

@@ -12,7 +12,8 @@
   const MAX_PAGES = 30; // Bluesky pages per page load
   const FETCH_GAP_MS = 1500;
   const HEAD_REFRESH_MS = 120000;
-  const RETRY_MS = 15000;
+  const RETRY_MS = 15000; // first retry after a failed request; doubles up to RETRY_MAX_MS
+  const RETRY_MAX_MS = 5 * 60000;
   const SCAN_DEBOUNCE_MS = 150;
   const IMAGE_CACHE_MAX = 300;
 
@@ -33,6 +34,7 @@
   let pagesFetched = 0;
   let lastFetchAt = 0;
   let blockedUntil = 0;
+  let retryDelay = RETRY_MS;
   let activeTab = null;
   let scanTimer = null;
   let dead = false;
@@ -65,7 +67,9 @@
     try {
       const res = await send({ type: 'bskyx:getTimeline', cursor: head ? undefined : cursor });
       if (!res?.ok) {
-        blockedUntil = Date.now() + RETRY_MS;
+        // Back off so a tab left open while logged out doesn't poll forever.
+        blockedUntil = Date.now() + retryDelay;
+        retryDelay = Math.min(retryDelay * 2, RETRY_MAX_MS);
         if (!warned) {
           warned = true;
           console.warn('[BlueXky]', res?.message || res?.error || 'timeline request failed');
@@ -73,6 +77,7 @@
         return;
       }
       warned = false;
+      retryDelay = RETRY_MS;
       for (const post of res.posts) {
         if (!posts.has(post.uri)) posts.set(post.uri, post);
         if (oldestBsky === null || post.sortAt < oldestBsky) oldestBsky = post.sortAt;
@@ -258,7 +263,7 @@
       case 'app.bsky.richtext.facet#link':
         return feature.uri;
       case 'app.bsky.richtext.facet#mention':
-        return `https://bsky.app/profile/${feature.did}`;
+        return `https://bsky.app/profile/${encodeURIComponent(feature.did)}`;
       case 'app.bsky.richtext.facet#tag':
         return `https://bsky.app/hashtag/${encodeURIComponent(feature.tag)}`;
       default:

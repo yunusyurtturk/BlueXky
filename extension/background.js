@@ -118,7 +118,7 @@ function simplifyAuthor(a = {}) {
 
 function postUrl(author, uri) {
   const actor = author.handle && author.handle !== 'handle.invalid' ? author.handle : author.did;
-  return `https://bsky.app/profile/${actor}/post/${uri.split('/').pop()}`;
+  return `https://bsky.app/profile/${encodeURIComponent(actor)}/post/${encodeURIComponent(uri.split('/').pop())}`;
 }
 
 function simplifyMedia(embed) {

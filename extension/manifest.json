@@ -3,6 +3,8 @@
   "name": "BlueXky",
   "version": "0.1.0",
   "description": "Shows your Bluesky home timeline inline in the X home timeline, merged chronologically.",
+  "homepage_url": "https://github.com/yunusyurtturk/BlueXky",
+  "minimum_chrome_version": "102",
   "icons": {
     "16": "icons/icon16.png",
     "32": "icons/icon32.png",
